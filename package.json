@@ -1,0 +1,33 @@
+{
+  "name": "order-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build tsconfig.json",
+    "dev": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --env --hot --config moleculer.config.ts services/**/*.service.ts",
+    "start": "moleculer-runner",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:down": "npx sequelize-cli db:migrate:undo",
+    "migrate:clear": "npx sequelize-cli db:migrate:undo:all",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate",
+    "migrate:generate": "npx sequelize-cli migration:generate --name"
+  },
+  "keywords": [],
+  "author": "Reinaldo Juvino",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "sequelize-cli": "^6.4.1",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "moleculer": "^0.14.21",
+    "moleculer-web": "^0.10.4",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.0"
+  }
+}
